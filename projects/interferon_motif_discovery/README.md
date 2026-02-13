@@ -15,10 +15,11 @@ This project is inspired by classical motif-finding studies such as the DosR reg
 Interferon-stimulated genes (ISGs) are a set of genes that cells rapidly activate after receiving interferon signals, which typically occur during viral infection.
 
 Instead of killing pathogens directly, interferons act as alarm signals that trigger a coordinated defensive gene program. The proteins encoded by ISGs implement antiviral actions such as:
-	•	Inhibiting viral replication
-	•	Degrading viral RNA
-	•	Enhancing immune signaling
-	•	Modulating cellular stress responses
+
+- Inhibiting viral replication
+- Degrading viral RNA
+- Enhancing immune signaling
+- Modulating cellular stress responses
 
 In this project, I analyze promoter regions upstream of ISGs to discover shared regulatory DNA motifs (short recurring patterns) that transcription factors use to switch these genes on.
 
@@ -39,18 +40,19 @@ Can we computationally rediscover shared regulatory motifs across ISG promoters 
 🔍 Computational Approach
 
 Promoter regions upstream of selected ISGs are extracted and analyzed using:
-	•	Median String algorithm
-	•	Randomized Motif Search
-	•	Gibbs Sampling
-	•	k-mer frequency analysis
-	•	Hamming distance & neighborhood generation
-	•	Reverse complement scanning
+- Median String algorithm
+- Randomized Motif Search
+- Gibbs Sampling
+- k-mer frequency analysis
+- Hamming distance & neighborhood generation
+- Reverse complement scanning
 
 The goal is to infer:
-	•	Consensus motif sequences
-	•	Profile matrices
-	•	Motif length estimation
-	•	Putative regulatory binding sites
+
+- Consensus motif sequences
+- Profile matrices
+- Motif length estimation
+- Putative regulatory binding sites
 
 ⸻
 
@@ -80,10 +82,11 @@ interferon_motif_discovery/
 ⸻
 
 🎯 Project Goals
-	•	Reproduce biologically meaningful regulatory motifs from ISG promoter data
-	•	Compare deterministic and randomized motif-finding algorithms
-	•	Evaluate motif conservation and variability
-	•	Bridge computational genomics with immune biology
+
+- Reproduce biologically meaningful regulatory motifs from ISG promoter data
+- Compare deterministic and randomized motif-finding algorithms
+- Evaluate motif conservation and variability
+- Bridge computational genomics with immune biology
 
 ⸻
 
