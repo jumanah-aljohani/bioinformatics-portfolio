@@ -1,6 +1,6 @@
-🔬 Motif Discovery in Interferon-Stimulated Genes (ISGs)
+## 🔬 Motif Discovery in Interferon-Stimulated Genes (ISGs)
 
-📌 Project Overview
+### 📌 Project Overview
 
 This project investigates the regulatory DNA motifs shared among interferon-stimulated genes (ISGs).
 
@@ -8,9 +8,8 @@ Using de novo motif discovery algorithms implemented from scratch, I aim to comp
 
 This project is inspired by classical motif-finding studies such as the DosR regulatory analysis in Mycobacterium tuberculosis, but applied here to human immune response genes.
 
-⸻
 
-🧬 What Are Interferon-Stimulated Genes (ISGs)?
+### 🧬 What Are Interferon-Stimulated Genes (ISGs)?
 
 Interferon-stimulated genes (ISGs) are a set of genes that cells rapidly activate after receiving interferon signals, which typically occur during viral infection.
 
@@ -23,9 +22,8 @@ Instead of killing pathogens directly, interferons act as alarm signals that tri
 
 In this project, I analyze promoter regions upstream of ISGs to discover shared regulatory DNA motifs (short recurring patterns) that transcription factors use to switch these genes on.
 
-⸻
 
-🧠 Biological Motivation
+### 🧠 Biological Motivation
 
 Interferon signaling activates transcription factors (such as STAT1, STAT2, and IRF family members) that bind to specific DNA motifs in promoter regions of ISGs.
 
@@ -35,9 +33,8 @@ This project asks:
 
 Can we computationally rediscover shared regulatory motifs across ISG promoters using motif-finding algorithms alone?
 
-⸻
 
-🔍 Computational Approach
+### 🔍 Computational Approach
 
 Promoter regions upstream of selected ISGs are extracted and analyzed using:
 - Median String algorithm
@@ -54,9 +51,8 @@ The goal is to infer:
 - Motif length estimation
 - Putative regulatory binding sites
 
-⸻
 
-📂 Project Structure
+### 📂 Project Structure
 
 ```text
 interferon_motif_discovery/
@@ -79,18 +75,16 @@ interferon_motif_discovery/
 └── paper_summary.md
 ```
 
-⸻
 
-🎯 Project Goals
+### 🎯 Project Goals
 
 - Reproduce biologically meaningful regulatory motifs from ISG promoter data
 - Compare deterministic and randomized motif-finding algorithms
 - Evaluate motif conservation and variability
 - Bridge computational genomics with immune biology
 
-⸻
 
-References
+### References
 
 1. Schoggins, J.W. et al. (2011). 
 A diverse range of gene products are effectors of the type I interferon antiviral response. 
@@ -101,9 +95,8 @@ Transcriptional Regulation of Antiviral Interferon-Stimulated Genes.
 Trends in Microbiology, 25(7), 573–584.
 https://doi.org/10.1016/j.tim.2017.01.001
 
-⸻
 
-👩‍🔬 Author
+### 👩‍🔬 Author
 
 Jumanah Aljohani
 B.Sc. in Medical Laboratory Sciences
