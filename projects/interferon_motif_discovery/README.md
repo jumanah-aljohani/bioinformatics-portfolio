@@ -100,4 +100,5 @@ https://doi.org/10.1016/j.tim.2017.01.001
 
 Jumanah Aljohani
 B.Sc. in Medical Laboratory Sciences
+
 Interested in genomics, computational bioinformatics, immune gene regulation, and translational biomedical research.
