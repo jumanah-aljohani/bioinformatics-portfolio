@@ -92,8 +92,14 @@ interferon_motif_discovery/
 
 References
 
-Schoggins et al., 2011, Nature.
-Transcriptional regulation of antiviral interferon-stimulated genes, 2017.
+1. Schoggins, J.W. et al. (2011). 
+A diverse range of gene products are effectors of the type I interferon antiviral response. 
+Nature, 472, 481–485. https://doi.org/10.1038/nature09907
+
+2. Wang, W., Xu, L., Su, J., Peppelenbosch, M.P., & Pan, Q. (2017).
+Transcriptional Regulation of Antiviral Interferon-Stimulated Genes.
+Trends in Microbiology, 25(7), 573–584.
+https://doi.org/10.1016/j.tim.2017.01.001
 
 ⸻
 
