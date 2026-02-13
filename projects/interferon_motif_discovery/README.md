@@ -56,8 +56,8 @@ The goal is to infer:
 
 📂 Project Structure
 
+```text
 interferon_motif_discovery/
-│
 ├── data/
 │   ├── gene_list.txt
 │   └── promoters.fasta
@@ -75,7 +75,7 @@ interferon_motif_discovery/
 │   └── figures/
 │
 └── paper_summary.md
-
+```
 
 ⸻
 
