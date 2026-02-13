@@ -90,6 +90,13 @@ interferon_motif_discovery/
 
 ⸻
 
+References
+
+Schoggins et al., 2011, Nature.
+Transcriptional regulation of antiviral interferon-stimulated genes, 2017.
+
+⸻
+
 👩‍🔬 Author
 
 Jumanah Aljohani
