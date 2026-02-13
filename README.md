@@ -55,4 +55,4 @@ It reflects continuous learning, hands-on practice, and a strong interest in res
 
 **Jumanah Aljohani**  
 Bachelor’s degree in Medical Laboratory Sciences  
-Interested in genomics, bioinformatics, and translational research
+Interested in genomics, computational bioinformatics, immune gene regulation, and translational biomedical research.
