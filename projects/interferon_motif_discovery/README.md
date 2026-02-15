@@ -69,10 +69,7 @@ interferon_motif_discovery/
 ├── results/
 │   ├── motifs_k8.txt
 │   ├── motifs_k10.txt
-│   ├── profile_matrix.txt
-│   └── figures/
-│
-└── paper_summary.md
+│   ├── profile_matrix.tx_summary.md
 ```
 
 
@@ -82,6 +79,15 @@ interferon_motif_discovery/
 - Compare deterministic and randomized motif-finding algorithms
 - Evaluate motif conservation and variability
 - Bridge computational genomics with immune biology
+
+### Dataset Description
+
+A curated list of 15 well-characterized ISGs was selected from Schoggins et al. (2011).
+For each gene, the 1000 bp upstream promoter region (GRCh38) was extracted from Ensembl.
+
+### Expected Outcomes
+
+This project aims to computationally identify motifs resembling canonical ISRE or GAS elements, validating known interferon-responsive binding patterns.
 
 
 ### References
