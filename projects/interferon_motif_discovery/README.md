@@ -27,9 +27,10 @@ AGTTTCNN TTTC
 
 ### 🔍 Dataset
 
-- 15 curated ISGs from Schoggins et al. (2011)
-- 15 randomly selected non-ISG control genes
-- 300 bp upstream promoter regions extracted from GRCh38 (Ensembl REST API)
+- 15 curated interferon-stimulated genes (ISGs) selected from Schoggins et al. (2011)
+- Initial promoter extraction: 1000 bp upstream of transcription start site (GRCh38, Ensembl REST API)
+- Refined analysis focused on proximal 300 bp upstream regions to reduce background noise and improve motif specificity
+- 15 randomly selected non-ISG control genes analyzed under identical conditions (300 bp upstream)
 
 ### 🧠 Computational Strategy
 
