@@ -1,106 +1,118 @@
-## 🔬 Motif Discovery in Interferon-Stimulated Genes (ISGs)
+### 🔬 Motif Discovery and ISRE Enrichment in Interferon-Stimulated Genes (ISGs)
 
 ### 📌 Project Overview
 
-This project investigates the regulatory DNA motifs shared among interferon-stimulated genes (ISGs).
+This project investigates regulatory DNA motifs within proximal promoter regions of interferon-stimulated genes (ISGs).
 
-Using de novo motif discovery algorithms implemented from scratch, I aim to computationally infer common promoter elements that drive immune gene activation in response to interferon signaling.
+Using both de novo motif discovery algorithms and targeted motif scanning approaches, the aim is to computationally identify and validate interferon-responsive elements in human ISG promoters.
 
-This project is inspired by classical motif-finding studies such as the DosR regulatory analysis in Mycobacterium tuberculosis, but applied here to human immune response genes.
+### 🧬 Biological Background
+
+Interferon-stimulated genes (ISGs) are a group of genes that are rapidly activated in response to interferon signaling, typically during viral infection.
+
+Rather than directly eliminating pathogens, interferons act as signaling molecules that initiate a coordinated transcriptional defense program. The proteins encoded by ISGs contribute to antiviral immunity through mechanisms such as:
+	
+  - Inhibition of viral replication
+  - Degradation of viral RNA
+  - Amplification of immune signaling pathways
+  - Regulation of cellular stress responses
+
+At the molecular level, interferon signaling activates transcription factors such as STAT1, STAT2, and IRF9. These factors bind to specific regulatory DNA sequences within gene promoters, particularly the interferon-stimulated response element (ISRE).
+
+The canonical ISRE consensus sequence is:
+
+   ```text
+AGTTTCNN TTTC
+```
+
+### 🔍 Dataset
+
+- 15 curated ISGs from Schoggins et al. (2011)
+- 15 randomly selected non-ISG control genes
+- 300 bp upstream promoter regions extracted from GRCh38 (Ensembl REST API)
+
+### 🧠 Computational Strategy
+
+1.	De novo motif discovery
+   
+- MEME Suite
+- Gibbs Sampling (k = 12)
+- Randomized Motif Search (k = 12)
+
+2.	Targeted ISRE motif scanning
+
+- Consensus: AGTTTCNN TTTC
+- Mismatch tolerance
+- Bidirectional strand scanning
+
+3.	Consensus sequence and PWM construction
+     
+4.	Enrichment analysis
+    
+    - ISGs vs control genes
+    - Fisher’s Exact Test
+   
+ ### 🧪 Key Results
+ 
+ - MEME identified an ISRE-like motif within proximal promoters.
+   
+ - Gibbs sampling converged to the consensus:
+   
+```text
+AGTTTCAGTTTC
+```
+- Randomized Motif Search independently recovered motifs containing the conserved AGTTTC core.
+   
+ - ISRE scanning detected strong matches (≤2 mismatches) in:
+      - 9/15 ISGs (60%)
+      - 3/15 control genes (20%)
+        
+	- Fisher’s Exact Test:
+      - Odds Ratio = 6.0
+      - p-value = 0.060
+
+Although statistical significance (α = 0.05) was not reached, a strong enrichment trend was observed.
 
 
-### 🧬 What Are Interferon-Stimulated Genes (ISGs)?
+### 📊 Interpretation
 
-Interferon-stimulated genes (ISGs) are a set of genes that cells rapidly activate after receiving interferon signals, which typically occur during viral infection.
+ISRE-like elements are enriched in proximal ISG promoters compared to random genes, consistent with interferon-mediated transcriptional regulation.
 
-Instead of killing pathogens directly, interferons act as alarm signals that trigger a coordinated defensive gene program. The proteins encoded by ISGs implement antiviral actions such as:
+Multiple independent computational approaches converged on the same conserved regulatory motif.
 
-- Inhibiting viral replication
-- Degrading viral RNA
-- Enhancing immune signaling
-- Modulating cellular stress responses
-
-In this project, I analyze promoter regions upstream of ISGs to discover shared regulatory DNA motifs (short recurring patterns) that transcription factors use to switch these genes on.
-
-
-### 🧠 Biological Motivation
-
-Interferon signaling activates transcription factors (such as STAT1, STAT2, and IRF family members) that bind to specific DNA motifs in promoter regions of ISGs.
-
-Although certain consensus motifs (e.g., ISRE elements) have been experimentally characterized, regulatory sequences often vary between genes.
-
-This project asks:
-
-Can we computationally rediscover shared regulatory motifs across ISG promoters using motif-finding algorithms alone?
-
-
-### 🔍 Computational Approach
-
-Promoter regions upstream of selected ISGs are extracted and analyzed using:
-- Median String algorithm
-- Randomized Motif Search
-- Gibbs Sampling
-- k-mer frequency analysis
-- Hamming distance & neighborhood generation
-- Reverse complement scanning
-
-The goal is to infer:
-
-- Consensus motif sequences
-- Profile matrices
-- Motif length estimation
-- Putative regulatory binding sites
-
+⸻
 
 ### 📂 Project Structure
 
 ```text
 interferon_motif_discovery/
+│
 ├── data/
-│   ├── gene_list.txt
-│   └── promoters.fasta
+│   ├── ISG_promoters_300bp_GRCh38.fa
+│   └── control_promoters_300bp.fa
 │
 ├── scripts/
-│   ├── run_median_string.py
-│   ├── run_randomized.py
 │   ├── run_gibbs.py
-│   └── scan_genome.py
+│   ├── run_randomized.py
+│   ├── scan_isre.py
+│   └── fisher_test.py
 │
 ├── results/
-│   ├── motifs_k8.txt
-│   ├── motifs_k10.txt
-│   ├── profile_matrix.tx_summary.md
+│   ├── isre_scan_results.tsv
+│   ├── control_isre_scan_results.tsv
+│   ├── gibbs_results.tsv
+│   ├── randomized_results.tsv
+│   ├── motif_logo.png
+│   └── project_summary.md
+│
+└── README.md
 ```
-
-
-### 🎯 Project Goals
-
-- Reproduce biologically meaningful regulatory motifs from ISG promoter data
-- Compare deterministic and randomized motif-finding algorithms
-- Evaluate motif conservation and variability
-- Bridge computational genomics with immune biology
-
-### Dataset Description
-
-A curated list of 15 well-characterized ISGs was selected from Schoggins et al. (2011).
-For each gene, the 1000 bp upstream promoter region (GRCh38) was extracted from Ensembl.
-
-### Expected Outcomes
-
-This project aims to computationally identify motifs resembling canonical ISRE or GAS elements, validating known interferon-responsive binding patterns.
-
 
 ### References
 
 1. Schoggins, J.W. et al. (2011). 
 A diverse range of gene products are effectors of the type I interferon antiviral response. 
 Nature, 472, 481–485. https://doi.org/10.1038/nature09907
-
-2. Wang, W., Xu, L., Su, J., Peppelenbosch, M.P., & Pan, Q. (2017).
-Transcriptional Regulation of Antiviral Interferon-Stimulated Genes.
-Trends in Microbiology, 25(7), 573–584.
-https://doi.org/10.1016/j.tim.2017.01.001
-
 
 ### 👩‍🔬 Author
 
