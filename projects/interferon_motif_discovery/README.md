@@ -53,35 +53,16 @@ AGTTTCNN TTTC
     - ISGs vs control genes
     - Fisher’s Exact Test
    
- ### 🧪 Key Results
- 
- - MEME identified an ISRE-like motif within proximal promoters.
-   
- - Gibbs sampling converged to the consensus:
-   
-```text
-AGTTTCAGTTTC
-```
-- Randomized Motif Search independently recovered motifs containing the conserved AGTTTC core.
-   
- - ISRE scanning detected strong matches (≤2 mismatches) in:
-      - 9/15 ISGs (60%)
-      - 3/15 control genes (20%)
-        
-	- Fisher’s Exact Test:
-      - Odds Ratio = 6.0
-      - p-value = 0.060
+## 🧪 Results Overview
 
-Although statistical significance (α = 0.05) was not reached, a strong enrichment trend was observed.
+De novo motif discovery and targeted scanning
+identified ISRE-like regulatory elements enriched
+within ISG promoters.
 
+Detailed quantitative results, statistical analysis,
+and motif visualizations are provided in:
 
-### 📊 Interpretation
-
-ISRE-like elements are enriched in proximal ISG promoters compared to random genes, consistent with interferon-mediated transcriptional regulation.
-
-Multiple independent computational approaches converged on the same conserved regulatory motif.
-
-⸻
+➡️ results/project_summary.md
 
 ### 📂 Project Structure
 
@@ -89,21 +70,33 @@ Multiple independent computational approaches converged on the same conserved re
 interferon_motif_discovery/
 │
 ├── data/
-│   ├── ISG_promoters_300bp_GRCh38.fa
-│   └── control_promoters_300bp.fa
+│   ├── gene_list.txt
+│   ├── Control_genes_list.txt
+│   │
+│   └──  promoters/
+│       ├── ISG_promoters_1000bp_GRCh38.fa
+│       ├── ISG_promoters_300bp_GRCh38.fa
+│       └── control_gene_promoters_300bp_GRCh38.fa
 │
 ├── scripts/
+│   ├── fetch_promoters_from_ensembl.py
 │   ├── run_gibbs.py
 │   ├── run_randomized.py
 │   ├── scan_isre.py
 │   └── fisher_test.py
 │
 ├── results/
-│   ├── isre_scan_results.tsv
-│   ├── control_isre_scan_results.tsv
-│   ├── gibbs_results.tsv
-│   ├── randomized_results.tsv
-│   ├── motif_logo.png
+│   ├── figures/
+│   │   └── isre_logo_gibbs.png
+│   │
+│   ├── tables/
+│   │   ├── gibbs_k12_N2000_restarts50.tsv
+│   │   ├── randomized_k12_restarts1000.tsv
+│   │   └── control_gene_promoters_300bp_GRCh38.tsv
+│   │ 
+│   ├── fisher_test_results.txt
+│   ├── gibbs_k12_score.txt
+│   ├── randomized_k12_score.txt
 │   └── project_summary.md
 │
 └── README.md
