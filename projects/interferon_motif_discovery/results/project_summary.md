@@ -16,7 +16,7 @@ This supports the biological expectation that ISG promoters are enriched for int
 
 ## Motif Visualization
 
-![ISRE Motif Logo](figures/motif_logo.png)
+![ISRE Motif Logo](figures/isre_logo_gibbs.png)
 
 ---
 
